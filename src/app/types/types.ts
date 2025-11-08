@@ -18,6 +18,8 @@ export interface SubAgent {
 export interface FileItem {
   path: string;
   content: string;
+  mediaUrl?: string;  // Blob URL for media files (audio/video)
+  mediaType?: string; // MIME type (e.g., 'audio/mpeg', 'video/mp4')
 }
 
 export interface FileMetadata {
@@ -61,3 +63,14 @@ export interface UploadedImage {
   previewUrl: string;
   uploadedUrl?: string;
 }
+
+export interface InterruptState {
+  runId: string;
+  threadId: string;
+  nodeName: string;
+  pendingAction?: any; // The action waiting for approval
+  state: any; // Current state at interrupt point
+  interruptId?: string; // Unique ID of the interrupt to track handled interrupts
+}
+
+export type HITLDecision = "approve" | "reject" | "edit";
