@@ -223,7 +223,19 @@ export const EditorWorkspace = React.memo<EditorWorkspaceProps>(
           throw new Error(`Failed to reload file: ${response.statusText}`);
         }
         const fileData = await response.json();
-        const newContent = fileData.content || '';
+        const rawContent = fileData.content || '';
+        
+        // Remove line numbers if present (format: "1\tcontent\n2\tcontent")
+        // Backend adds line numbers with tabs, so we strip them to avoid double numbering
+        const linesArray = rawContent.split('\n');
+        const newContent = linesArray.map((line: string) => {
+          // Match: optional whitespace, one or more digits, followed by tab or whitespace, then capture rest
+          // Format: "     1\tcontent" or "     1 content" or "1\tcontent"
+          const match = line.match(/^\s*\d+[\t\s]+(.*)$/);
+          // If match found, return the content part (which might be empty for blank lines)
+          // If no match, return line as-is (for lines that don't start with numbers)
+          return match !== null ? match[1] : line;
+        }).join('\n');
         
         setFileContents(prev => ({
           ...prev,
