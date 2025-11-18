@@ -10,7 +10,10 @@ import { useFileWatcher, type FileChangeEvent } from "../../hooks/useFileWatcher
 
 const Editor = dynamic(() => import("@monaco-editor/react"), { ssr: false });
 
-const FILE_API_URL = 'http://localhost:8001/api';
+//dev env
+//const FILE_API_URL = 'http://localhost:8001/api';
+//prod env
+const FILE_API_URL = 'https://agentstoryboard-production.up.railway.app/api';
 
 // Helper function to detect language from file extension
 function getLanguageFromPath(path: string): string {

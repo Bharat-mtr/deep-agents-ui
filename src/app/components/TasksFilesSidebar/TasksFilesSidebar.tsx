@@ -20,7 +20,7 @@ import type { TodoItem, FileItem } from "../../types/types";
 import styles from "./TasksFilesSidebar.module.scss";
 import { useFileWatcher, type FileChangeEvent } from "../../hooks/useFileWatcher";
 
-const FILE_API_URL = 'http://localhost:8001/api';
+const FILE_API_URL = 'https://agentstoryboard-production.up.railway.app/api';
 
 interface FileInfo {
   path: string;
