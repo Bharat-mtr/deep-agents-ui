@@ -1,7 +1,7 @@
 import { useEffect, useRef, useCallback } from 'react';
 
-const FILE_API_URL = 'http://localhost:8001/api';
-const WS_URL = 'ws://localhost:8001/ws/files';
+//const FILE_API_URL = 'http://localhost:8001/api';
+const WS_URL = 'wss://agentstoryboard-production.up.railway.app/ws/files';
 
 export interface FileChangeEvent {
   type: 'file_created' | 'file_updated' | 'file_deleted';
