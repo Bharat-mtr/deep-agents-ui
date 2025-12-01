@@ -42,6 +42,13 @@
 
 .closeButton {
   padding: $spacing-xs;
+  color: var(--color-text-primary);
+
+  svg {
+    color: currentColor;
+    stroke: currentColor;
+    fill: none;
+  }
 
   &:hover {
     background-color: var(--color-border-light);
@@ -78,6 +85,9 @@
   height: 32px;
   margin-bottom: $spacing-sm;
   opacity: 0.5;
+  color: var(--color-text-tertiary);
+  stroke: currentColor;
+  fill: none;
 }
 
 .threadList {
@@ -138,6 +148,8 @@
   color: var(--color-text-secondary);
   flex-shrink: 0;
   margin-top: 2px;
+  stroke: currentColor;
+  fill: none;
 }
 
 .threadContent {

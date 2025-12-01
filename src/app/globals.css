@@ -259,6 +259,12 @@ button {
   &:disabled {
     cursor: not-allowed;
   }
+  
+  /* Ensure lucide-react icons inside buttons inherit color */
+  svg {
+    color: currentColor;
+    stroke: currentColor;
+  }
 }
 
 .sr-only {

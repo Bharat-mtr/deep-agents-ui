@@ -42,11 +42,19 @@
   display: flex;
   align-items: center;
   gap: $spacing-xs;
+  color: var(--color-text-primary);
 
   button {
     width: 32px;
     height: 32px;
     padding: 0;
+    color: var(--color-text-primary);
+    
+    svg {
+      color: currentColor;
+      stroke: currentColor;
+      fill: none;
+    }
     
     &:hover:not(:disabled) {
       background-color: var(--color-interactive-hover);
@@ -230,6 +238,12 @@
   padding: 0;
   color: var(--color-text-secondary);
   
+  svg {
+    color: currentColor;
+    stroke: currentColor;
+    fill: none;
+  }
+  
   &:hover:not(:disabled) {
     background-color: var(--color-interactive-hover);
     color: var(--color-text-primary);
@@ -288,6 +302,12 @@
   align-items: center;
   justify-content: center;
   
+  svg {
+    color: currentColor;
+    stroke: currentColor;
+    fill: none;
+  }
+  
   &:hover:not(:disabled) {
     opacity: 0.9;
   }
@@ -309,6 +329,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  svg {
+    color: currentColor;
+    stroke: currentColor;
+    fill: none;
+  }
 
   &:hover {
     opacity: 0.9;
