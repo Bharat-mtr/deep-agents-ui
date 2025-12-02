@@ -96,6 +96,12 @@
   opacity: 0;
   transition: opacity $transition-base, background-color $transition-base;
 
+  svg {
+    color: currentColor;
+    stroke: currentColor;
+    fill: none;
+  }
+
   .tab:hover & {
     opacity: 1;
   }
@@ -109,6 +115,13 @@
 .chatToggle {
   margin-left: $spacing-sm;
   flex-shrink: 0;
+  color: var(--color-text-primary);
+
+  svg {
+    color: currentColor;
+    stroke: currentColor;
+    fill: none;
+  }
 }
 
 .contentRow {
@@ -167,6 +180,13 @@
   align-items: center;
   gap: $spacing-xs;
   padding: $spacing-xs $spacing-sm;
+  color: var(--color-text-primary);
+
+  svg {
+    color: currentColor;
+    stroke: currentColor;
+    fill: none;
+  }
 }
 
 .editorContainer {
